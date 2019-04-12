@@ -1,10 +1,14 @@
 Rails.application.routes.draw do
-  resources :favorites
-  resources :categories
   namespace :api do
     namespace :v1 do
-      resources :users
-      resources :videos
+      resources :users do
+        resources :videos
+        resources :favorites
+        resources :categories
+      end
+      resources :categories do
+        resources :videos
+      end
     end
   end
 end
