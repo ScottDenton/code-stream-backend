@@ -1,3 +1,6 @@
 class UserSerializer < ActiveModel::Serializer
-  attributes :id
+  has_many :videos
+  has_many :favorites, as: :favorable
+
+  attributes :id, :username, :password_digest
 end
