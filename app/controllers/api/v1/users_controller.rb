@@ -1,5 +1,6 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :find_user, only: [:edit, :update, :destroy]
+  before_action :find_user, only: [:show, :edit, :update, :destroy]
+
 
   def index
     @users =User.all
@@ -15,6 +16,12 @@ class Api::V1::UsersController < ApplicationController
       render json: { errors: @user.errors.full_messages }, status: :unprocessible_entity
     end
   end
+
+  def show
+    if @user
+      render json: @user, status: :accepted
+    else
+      render json: { errors: @user.errors.full_messages }, status: :unprocessible_entity  end
 
   def edit
     render json: @user, status: :accepted
@@ -32,6 +39,11 @@ class Api::V1::UsersController < ApplicationController
 
   def destroy
     @user.destroy
+  end
+
+
+  def findExistingUser
+    @user=User.find(user_params)
   end
 
   private
