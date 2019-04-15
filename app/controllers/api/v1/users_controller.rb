@@ -1,5 +1,5 @@
 class Api::V1::UsersController < ApplicationController
-  before_action :find_user, only: [:show, :edit, :update, :destroy]
+  before_action :find_user, only: [:edit, :update, :destroy]
 
 
   def index
@@ -16,12 +16,17 @@ class Api::V1::UsersController < ApplicationController
       render json: { errors: @user.errors.full_messages }, status: :unprocessible_entity
     end
   end
-
   def show
-    if @user
-      render json: @user, status: :accepted
-    else
-      render json: { errors: @user.errors.full_messages }, status: :unprocessible_entity  end
+    url = `https://api.twitch.tv/helix/videos?user_id=#{params[:user_id]}`
+    headers={
+      'Client-ID': Rails.application.credentials.twitch[:secret_api_key]
+    }
+
+    response = HTTParty.get(url, headers: headers)
+
+    @data= response.body
+    render json: @data
+  end
 
   def edit
     render json: @user, status: :accepted
@@ -54,7 +59,7 @@ class Api::V1::UsersController < ApplicationController
 
 
   def user_params
-    params.require(:user).permit(:username, :password)
+    params.require(:user).permit(:username, :password, :user_id)
   end
 
 
