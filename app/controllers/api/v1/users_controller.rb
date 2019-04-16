@@ -16,6 +16,7 @@ class Api::V1::UsersController < ApplicationController
       render json: { errors: @user.errors.full_messages }, status: :unprocessible_entity
     end
   end
+
   def show
     url = `https://api.twitch.tv/helix/videos?user_id=#{params[:user_id]}`
     headers={

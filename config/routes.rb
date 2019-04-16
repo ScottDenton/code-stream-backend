@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
   namespace :api do
     namespace :v1 do
+      resources :livestreams
       resources :users do
         resources :videos
         resources :favorites
