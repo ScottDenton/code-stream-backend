@@ -22,18 +22,16 @@ ActiveRecord::Schema.define(version: 2019_04_12_190850) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.string "favorable_type"
-    t.bigint "favorable_id"
+    t.integer "followed_id"
+    t.string "favorite_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["favorable_type", "favorable_id"], name: "index_favorites_on_favorable_type_and_favorable_id"
   end
 
   create_table "users", force: :cascade do |t|
     t.string "username"
+    t.string "user_id"
     t.string "password_digest"
-    t.integer "favorable_id"
-    t.string "favorable_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
