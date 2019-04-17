@@ -1,6 +1,5 @@
 class FavoriteSerializer < ActiveModel::Serializer
   belongs_to :user
-  belongs_to :video
-  attributes :id
+  attributes :id, :user_id, :followed_username, :favorite_type
 
 end

@@ -1,4 +1,4 @@
 class Api::V1::CategoriesController < ApplicationController
 
-  def inde
+  def index
 end
