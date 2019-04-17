@@ -1,17 +1,17 @@
 class Api::V1::FavoritesController < ApplicationController
-  before_action :findExistingUser, only: [:create]
 
+  def index
+    # @favorite = Favorite.all
+    # render json :@favorite
+  end
+
+  def show
+    # @favorite = Favorite.all
+    # render json :@favorite
+  end
 
   def create
 
-  end
-
-
-private
-
-  def findExistingUser
-
-    @user=User.find(params[:user_id])
   end
 
 end

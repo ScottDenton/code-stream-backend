@@ -1,5 +1,6 @@
 class FavoriteSerializer < ActiveModel::Serializer
-  belongs_to :favorable, polymorphic: true
+  belongs_to :user
+  belongs_to :video
   attributes :id
 
 end

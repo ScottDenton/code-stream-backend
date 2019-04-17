@@ -3,8 +3,8 @@ class SessionsController < ApplicationController
   end
 
   def create
-    user = User.all.find_by(username: params[:username])
-      render json: user
+    @user = User.all.find_by(username: params[:username])
+      render json: @user
   end
 
   def destroy
@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
     redirect_to '/', notice: "Logged Out"
   end
 
-  def user_params
-    params.require(:user).permit(:username, :password)
-  end
+  # def user_params
+  #   params.require(:user).permit(:username, :password)
+  # end
 end

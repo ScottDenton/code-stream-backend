@@ -24,11 +24,3 @@ class Api::V1::VideosController < ApplicationController
     end
 
 end
-# "11148817", "pajlada", game id = 509670
-# find tech streams
-# "https://api.twitch.tv/helix/streams?game_id=509670"
-
-# from name to find user
-  # url = "https://api.twitch.tv/helix/users?login=destiny
-# from user to videos
-# url = "https://api.twitch.tv/helix/videos?user_id=18074328"

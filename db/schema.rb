@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2019_04_12_190850) do
   end
 
   create_table "favorites", force: :cascade do |t|
-    t.integer "followed_id"
+    t.integer "user_id"
     t.string "favorite_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
