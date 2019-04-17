@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   get 'sessions/new'
   post 'sessions/create'
+  post 'sessions/getUserVideos'
   get 'sessions/destroy'
   namespace :api do
     namespace :v1 do
