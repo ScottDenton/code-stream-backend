@@ -4,24 +4,16 @@ class Api::V1::FavoritesController < ApplicationController
 
   def index
     @favorites = @user.favorites
-
     render json: @favorites
-
-  end
-
-  def show
   end
 
   def create
-
     @favorite = Favorite.create(user_id: @user.id , followed_username: params[:followed_name] )
   end
 
   def destroy
     @favorite.delete
   end
-
-
 
 private
 
