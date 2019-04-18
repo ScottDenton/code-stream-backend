@@ -4,7 +4,7 @@ class Api::V1::UsersController < ApplicationController
 
   def index
     @users =User.all
-      render json: @data
+      render json: @users
   end
 
 
