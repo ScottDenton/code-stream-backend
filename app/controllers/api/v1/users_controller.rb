@@ -3,7 +3,8 @@ class Api::V1::UsersController < ApplicationController
 
 
   def index
-    render json: Rails.application.credentials.twitch[:secret_api_key]
+    @users =User.all
+      render json: @users
   end
 
 
