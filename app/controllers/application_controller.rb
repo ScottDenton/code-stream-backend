@@ -5,12 +5,11 @@ class ApplicationController < ActionController::API
 
   def current_user
     render json: Rails.application.credentials
-    return
-    if session[:user_id]
-      @current_user ||= User.find(session[:user_id])
-    else
-      @current_user= nil
-    end
+    # if session[:user_id]
+    #   @current_user ||= User.find(session[:user_id])
+    # else
+    #   @current_user= nil
+    # end
   end
 
   # def getInitialStreams
