@@ -1,6 +1,6 @@
 
 class ApplicationController < ActionController::API
-before_action :getInitialStreams, only: :index
+#before_action :getInitialStreams, only: :index
 
 
   def current_user
@@ -11,17 +11,19 @@ before_action :getInitialStreams, only: :index
     end
   end
 
-  def getInitialStreams
-    url = "https://api.twitch.tv/helix/streams"
-    headers={
-      'Client-ID': Rails.application.credentials.twitch[:secret_api_key]
-    }
-
-    response = HTTParty.get(url, headers: headers)
-
-    @data= response.body
-
-  end
+  # def getInitialStreams
+  #   puts "corndog"
+  #   url = "https://api.twitch.tv/helix/streams"
+  #   puts Rails.application.credentials.twitch
+  #   headers={
+  #     'Client-ID': Rails.application.credentials.twitch[:secret_api_key]
+  #   }
+  #
+  #   response = HTTParty.get(url, headers: headers)
+  #
+  #   @data= response.body
+  #
+  # end
 
 
 end
