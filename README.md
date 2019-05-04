@@ -1,24 +1,5 @@
-# README
+# [Code Stream](http://code-stream.herokuapp.com/)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the Rails backend for [Code Stream](http://code-stream.herokuapp.com/), an app designed and built by [Scott Slatton](https://github.com/scottslatton) and Scott Denton as a 4 day partner project.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+For a detailed description of the apps functionality please head over to the [front end repository](https://github.com/ScottDenton/code-stream-front-end) or simply head over to [Code Stream](http://code-stream.herokuapp.com/) and give it a test.
